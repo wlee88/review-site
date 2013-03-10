@@ -1,0 +1,32 @@
+      <hr>
+
+      <div class="jumbotron">
+        <h1> "<%= @random_review.content %>" - <%= @random_review.name%></h1>
+          <%= image_tag "http://f0.bcbits.com/z/38/76/3876675529-1.jpg", class: 'front-image img-rounded' %>
+          <br />
+        <a class="btn btn-large btn-success" href="http://superiphase3ds.bandcamp.com"><i class="icon-music"></i> Listen</a>
+      </div>
+
+      <hr>
+      <div class="row-fluid jumbotron">
+         <a class="btn btn-large btn-primary" href="<%= new_review_path %>"><i class="icon-plus icon-white"></i> Add a review</a>
+      </div>
+
+      <div class="row-fluid marketing">
+        <div class="span12">
+          <% @reviews.each do |review|%>
+            <h4><%= review.name %></h4>
+            <p> <%= review.content %></p>
+          <% end %>
+        </div>
+
+        
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <p>&copy; Super iPhase 3DS 2013</p>
+      </div>
+
+    </div> <!-- /container -->

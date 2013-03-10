@@ -1,0 +1,27 @@
+
+<%= form_for(@review) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation" class="well">
+      <h2>I can't save this review...</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Name of reviewer" %><reviewer />
+    <%= f.text_field :name, class: "span8"%>
+  </div>
+  <div class="field">
+    <%= f.label "Review text" %><br />
+    <%= f.text_field :content, class: "span8" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary"%>
+  </div>
+<% end %>
